@@ -1,0 +1,23 @@
+﻿@model List<CMCS.Models.ClaimViewModel>
+
+<h2>My Claims</h2>
+
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Hours</th>
+        <th>Amount</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var claim in Model)
+    {
+        <tr>
+            <td>@claim.Month</td>
+            <td>@claim.HoursWorked</td>
+            <td>@claim.TotalAmount</td>
+            <td>@claim.Status</td>
+            <td><a asp-action="Review" asp-route-id="@claim.ClaimID">View</a></td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,34 @@
+﻿@model CMCS.Models.ClaimViewModel
+
+<h2>Submit New Claim</h2>
+
+<form asp-action="Submit" method="post" enctype="multipart/form-data">
+    <label>Month:</label>
+    <select asp-for="Month">
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+    </select><br />
+
+    <label>Hours Worked:</label>
+    <input asp-for="HoursWorked" type="number" /><br />
+
+    <label>Upload Supporting Document:</label>
+    <input asp-for="SupportingDocument" type="file" /><br />
+
+    <button type="submit">Submit Claim</button>
+</form>
+
+@if (TempData["Message"] != null)
+{
+    <p>@TempData["Message"]</p>
+}
