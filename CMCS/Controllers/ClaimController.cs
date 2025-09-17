@@ -33,7 +33,7 @@ public class ClaimController : Controller
     public IActionResult Review(int id)
     {
         var claim = new ClaimViewModel { ClaimID = id, LecturerName = "Vianka", Month = "August", HoursWorked = 20, HourlyRate = 200, Status = "Pending" };
-        // Pass claim to the view for review and approval
+        // Pass the claim to the view for review and approval
         return View(claim);
     }
 }
